@@ -12,18 +12,10 @@ var app = new Vue(
     },
     methods: {
       nextImg: function() {
-        // this.imgIndex = (this.imgIndex == this.immagini.length) ? this.imgIndex = 0 : this.imgIndex++;
-        this.imgIndex++;
-        if (this.imgIndex == this.immagini.length) {
-          this.imgIndex = 0;
-        }
+        this.imgIndex = (this.imgIndex == this.immagini.length - 1) ? this.imgIndex = 0 : this.imgIndex + 1;
       },
       prevImg: function() {
-        // this.imgIndex = (this.imgIndex < 0) ? this.immagini.length - 1 : this.imgIndex--;
-        this.imgIndex--;
-        if (this.imgIndex < 0) {
-          this.imgIndex = this.immagini.length - 1;
-        }
+        this.imgIndex = (this.imgIndex == 0) ? this.immagini.length - 1 : this.imgIndex - 1;
       }
     }
   }
