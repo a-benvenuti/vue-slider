@@ -28,16 +28,16 @@
       <div class="wrapper">
         <div class="carousel">
           <div class="prev">
-            <i class="fas fa-angle-left"></i>
+            <i @click="prevImg" class="fas fa-angle-left"></i>
           </div>
           <div class="images">
-            <img src="https://i.pinimg.com/originals/ac/06/97/ac06973185cd4fadb610946be716551c.jpg" alt="img">
+            <img v-bind:src="immagini[imgIndex]" alt="img">
             <div class="bullets">
-              <i class="fas fa-circle"></i>
+              <i class="far fa-circle" v-for="(immagine, index) in immagini" v-bind:class="imgIndex == index ? 'active' : ''"></i>
             </div>
           </div>
           <div class="next">
-            <i class="fas fa-angle-right"></i>
+            <i @click="nextImg" class="fas fa-angle-right"></i>
           </div>
         </div>
       </div>
